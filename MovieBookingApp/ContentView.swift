@@ -16,25 +16,28 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            TabView(selection: $currentTab) {
-                Text("Home")
-                    .tag(Tab.home)
+        NavigationView {
+            VStack(spacing: 0) {
+                TabView(selection: $currentTab) {
+                    HomeView()
+                        .tag(Tab.home)
+                    
+                    Text("Location")
+                        .tag(Tab.location)
+                    
+                    TicketView()
+                        .tag(Tab.ticket)
+                    
+                    Text("Category")
+                        .tag(Tab.category)
+                    
+                    Text("Profile")
+                        .tag(Tab.profile)
+                }
                 
-                Text("Location")
-                    .tag(Tab.location)
-                
-                TicketView()
-                    .tag(Tab.ticket)
-                
-                Text("Category")
-                    .tag(Tab.category)
-                
-                Text("Profile")
-                    .tag(Tab.profile)
+                CustomTabBar(currentTab: $currentTab)
             }
-            
-            CustomTabBar(currentTab: $currentTab)
+            .ignoresSafeArea(.keyboard)
         }
     }
 }
