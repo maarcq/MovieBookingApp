@@ -33,7 +33,7 @@ struct BookingView: View {
                 
                 VStack(spacing: 0) {
                     HStack {
-                        CircleButton(action: { dismiss }, image: "arrow.left")
+                        CircleButton(action: { dismiss() }, image: "arrow.left")
                         Spacer()
                         CircleButton(action: {}, image: "ellipsis")
                     }
