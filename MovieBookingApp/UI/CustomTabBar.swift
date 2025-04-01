@@ -70,7 +70,6 @@ struct CustomTabBar: View {
         
         return index * buttonWidth
     }
-    
     func getIndex() -> Int {
         switch currentTab {
         case .home:
